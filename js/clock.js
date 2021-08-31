@@ -1,10 +1,19 @@
 
 
 const today = new Date();
-const hour = today.getHours();
+const hour = today.getHours() ;
+const minutes = today.getMinutes();
 
-document.getElementById('txt').innerHTML = new Date();
-document.getElementById('hour').innerHTML= hour;
+
+const time = (realTime) => {
+    if(realTime > 12) {
+        return realTime - 12
+    }else {
+        return realTime
+    }
+};
+
+document.getElementById('hour').innerHTML = `${time(hour)}:${minutes}`;
 
 
 
